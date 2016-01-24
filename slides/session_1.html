@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Taller Processing Cocolab - Sesión #1</title>
+
+    <meta name="description" content="Slides de la sesión #1 del taller de Processing.">
+    <meta name="author" content="Diego Montesinos">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Processing Workshop</h1>
+          <h3>Sesión #1</h3>
+          <p>
+            <small>Diego Montesinos / COCOLAB 2016</small>
+          </p>
+          <img width="170" height="170" data-src="img/processing.png"/>
+        </section>
+
+        <section>
+          <section>
+            <h1>¿Qué es Processing?</h1>
+            <blockquote>
+            &ldquo;Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. Since 2001, Processing has promoted software literacy within the visual arts and visual literacy within technology.&rdquo;
+          </blockquote>
+          </section>
+          <section>
+            <h2>Sketchbook</h2>
+          </section>
+          <section>
+            <h2>Lenguaje de Programación</h2>
+          </section>
+          <section>
+            <h2>Historia</h2>
+            <img data-src="https://constructingkids.files.wordpress.com/2013/05/logo_mit.png" />
+          </section>
+          <section>
+            <img width="440" data-src="http://www.quickmeme.com/img/33/3307b17a0a598d43cc1421e2e01d695309792567275e191ef2fe0759ad19ac4d.jpg" />
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Baby Steps - Programación</h1>
+          </section>
+
+          <section>
+            <h2>¿Qué es programar?</h2>
+            <p>Programar es escribir algoritmos.</p>
+          </section>
+
+          <section>
+            <h2>Algoritmos</h2>
+            <img data-src="http://biblipole.com/images/pictuers/algorithm_word_used_by_programmers.png" />
+          </section>
+
+          <section>
+            <img data-src="http://atariage.com/2600/hacks/screenshots/s_SpaceInvaders_RK_Hack_2.png" />
+          </section>
+
+          <section>
+            <h2>Ejercicio</h2>
+            <img data-src="http://img.memecdn.com/fucking-recipe_o_742109.jpg">
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Baby Steps - Processing</h1>
+          </section>
+
+          <section>
+            <h2>¿Algoritmo para dibujar una línea?</h2>
+            <ol>
+              <li>Toma una hoja de papel</li>
+              <li>Toma un lápiz</li>
+              <li>Dibuja una línea</li>
+              <li>Listo!</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>Programa para dibujar una línea</h2>
+            <pre><code class="hljs">line(?,?,?,?);</code></pre>
+          </section>
+
+          <section>
+            <h2><strike>Programa</strike>Sketch para dibujar una línea</h2>
+            <pre><code class="hljs">line(?,?,?,?);</code></pre>
+          </section>
+
+          <section>
+            <h2>¿Qué linea?</h2>
+            <img data-src="img/line-draw.png">
+          </section>
+
+          <section>
+            <h2>Sketch para dibujar una línea</h2>
+            <pre><code class="hljs">line(1,0,4,5);</code></pre>
+          </section>
+
+          <section>
+            <img data-src="img/sentence-line.png">
+            <img data-src="img/coordinates.png">
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>PDE</h1>
+            <h2>Processing Development Environment</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Basic Shapes</h1>
+            <img data-src="img/basic-shapes.png">
+          </section>
+
+          <section>
+            <h2>Punto</h2>
+            <img data-src="img/point.png">
+          </section>
+
+          <section>
+            <h2>Lineas</h2>
+            <img data-src="img/line.png">
+          </section>
+
+          <section>
+            <h2>Rectangulos</h2>
+            <img data-src="img/rect.png">
+          </section>
+
+          <section>
+            <h2>Rectangulos</h2>
+            <img data-src="img/rect-center.png">
+          </section>
+
+          <section>
+            <h2>Rectangulos</h2>
+            <img data-src="img/rect-corners.png">
+          </section>
+
+          <section>
+            <h2>¿Elipses?</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              ellipse(1, 5, 10, 10);
+              ellipseMode(CENTER);
+              ellipseMode(CORNER);
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Ejercicio</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              line(0,0,9,6);
+              point(0,2);
+              point(0,4);
+              rectMode(CORNER);
+              rect(5,0,4,3);
+              ellipseMode(CENTER);
+              ellipse(3,7,4,4);
+            </code></pre>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hjls.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
