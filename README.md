@@ -15,15 +15,15 @@ Si quieres leerlas como se presentan en las sesiones:
 3.  Abrir el archivo `index.html` y abrir cada una de las sesiones.
 
 Puedes leer también la versión exportada a PDF, abriendo los archivos
-`.pdf` de la carpeta:
-
-.
-+-- slides
-|   +-- pdf
-|      +-- Sesión #1.pdf
+`.pdf` de la carpeta `slides/pdf/`
 
 ## Código
 
+Se irán subiendo pequeños sketches mostrando los conceptos que se vayan viendo
+en clase, con comentarios. Es recomendable abrirlos y leerlos, se pueden modificar
+y experimentar, y así generar dudas.
+
+El código está en la carpeta `code/` separadas por sesión.
 
 ## Bibliografía
 
