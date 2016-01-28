@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Taller Processing Cocolab - Sesión #2</title>
+
+    <meta name="description" content="Slides de la sesión #2 del taller de Processing.">
+    <meta name="author" content="Diego Montesinos">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Processing Workshop</h1>
+          <h3>Sesión #2</h3>
+          <p>
+            <small>Diego Montesinos / COCOLAB 2016</small>
+          </p>
+          <img width="170" height="170" data-src="img/dude.png"/>
+        </section>
+
+        <!-- RELLENO Y CONTORNO -->
+        <section>
+          <section>
+            <h1>Relleno y contorno</h1>
+          </section>
+
+          <section>
+            <h2>Escala de grises</h2>
+            <img data-src="img/grayscale.png">
+          </section>
+
+          <section>
+            <h2>Background</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              background(10);
+              background(255);
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>fill y stroke</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              fill(255);
+              stroke(0);
+              rect(10, 10, 300, 300);
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>noFill y noStroke</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              noFill();
+              stroke(0);
+              rect(10, 10, 300, 300);
+            </code></pre>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              fill(0);
+              noStroke();
+              rect(10, 10, 300, 300);
+            </code></pre>
+          </section>
+        </section>
+
+        <!-- COLOR -->
+        <section>
+          <section>
+            <h1>Color</h1>
+            <img data-src="https://media.giphy.com/media/lz6a5yk1x3NPa/giphy.gif">
+          </section>
+
+          <section>
+            <img data-src="http://www.toronto4kids.com/images/cache/cache_f/cache_2/cache_8/finger-painting-657f582f.jpeg?ver=1452822864&aspectratio=1.6">
+          </section>
+
+          <section>
+            <img data-src="https://metrouk2.files.wordpress.com/2014/11/screen_shot_2014-11-19_at_08-15-51-e1416487059176.png">
+          </section>
+
+          <section>
+            <h2>Modelo RGB</h2>
+            <img data-src="http://www.pulso.uniovi.es/wiki/images/9/96/Rgb.png">
+          </section>
+
+          <section>
+            <h2>Modelo RGB</h2>
+            <ul>
+              <li>Red: 0 - 255</li>
+              <li>Green: 0 - 255</li>
+              <li>Blue: 0 - 255</li>
+            </ul>
+            <p>
+              Ejemplo: fiusha (?) (255, 0, 255)
+            </p>
+          </section>
+
+          <section>
+            <h2>Colour my life with the code of trouble</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              background(r, g, b);
+              fill(r, g, b);
+              stroke(r, g, b);
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Colour my life with the code of trouble</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              background(0, 255, 10);
+
+              fill(45, 10, 33);
+              stroke(4, 20, 40);
+
+              rect(0, 0, 40, 20);
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Ejemplo</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              fill(?, ?, ?); // Azul brillante
+              ellipse(20,40,16,16);
+
+              fill(?, ?, ?); // Morado oscuro
+              ellipse(40,40,16,16);
+
+              fill(?, ?, ?); // Amarillo
+              ellipse(60,40,16,16);
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Alphas?</h2>
+            <p>...</p>
+          </section>
+        </section>
+
+        <!-- EL FLUJO DE UN SKETCH -->
+        <section>
+          <section>
+            <h1>Flujo de un Sketch</h1>
+          </section>
+
+          <section>
+            <img data-src="http://atariage.com/2600/hacks/screenshots/s_SpaceInvaders_RK_Hack_2.png" />
+          </section>
+
+          <section>
+            <h2>El gran proceso</h2>
+            <ol>
+              <li><b>Paso 1:</b> Establece las condiciones iniciales.</li>
+              <li><b>Paso 2:</b> Haz algo una y otra, y otra, y otra vez...</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>Los compadres: <code>setup</code> & <code>draw</code></h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              // Se ejecuta una sola vez
+              void setup () {
+              }
+
+              // Se ejecuta infinitas veces
+              // (tantas como fps)
+              void draw () {
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Ejercicio</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              void setup() {
+                size(200,200);
+              }
+
+              void draw() {
+                background(255);
+                stroke(0);
+                fill(175);
+                rectMode(CENTER);
+                rect(mouseX, mouseY, 50, 50);
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Ejercicio</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              void setup() {
+                size(200,200);
+                background(255);
+              }
+
+              void draw() {
+                stroke(0);
+                fill(175);
+                rectMode(CENTER);
+                rect(mouseX, mouseY, 50, 50);
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <img data-src="https://media.giphy.com/media/26tPnAAJxXTvpLwJy/giphy.gif">
+          </section>
+        </section>
+
+        <!-- VARIABLES -->
+        <section>
+          <section>
+            <h1>Fundamentos: Variables</h1>
+          </section>
+
+          <section>
+            <h2>Memoria</h2>
+            <p>La computadora debe recordar algunas cosas...</p>
+          </section>
+
+          <section>
+            <h2>Memoria</h2>
+            <p>La computadora debe recordar posiciones, tamaños, etc (Osea datos).</p>
+          </section>
+
+          <section>
+            <h2>Memoria - Datos</h2>
+            <img width="400" data-src="http://www.revistasumma.com/wp-content/uploads/2015/02/02145130030614.jpg">
+          </section>
+
+          <section>
+            <h2>¿Cuales datos puedes ver en Pong?</h2>
+            <img width="400" data-src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Pong.png">
+          </section>
+
+          <section>
+            <h2>Variables primitivos</h2>
+            <ul>
+              <li>Numeros enteros</li>
+              <li>Numeros decimales</li>
+              <li>Texto</li>
+              <li>Booleano</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Variables primitivos</h2>
+            <ul>
+              <li>Numeros enteros: <code>int</code></li>
+              <li>Numeros decimales: <code>float</code></li>
+              <li>Texto: <code>String</code></li>
+              <li>Booleano: <code>boolean</code></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Tipo + Nombre</h2>
+            <img data-src="img/vars.png">
+          </section>
+
+          <section>
+            <h2>Variables: Declaración e inicialización</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+
+              // Se declara
+              int count;
+
+              // Se inicializa
+              count = 0;
+
+              // O todo en una linea
+              int count = 0;
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Asignación</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              int count = 0;
+              String name = "Diego";
+
+              float money = 132.32;
+
+              boolean happy = false;
+
+              float x = 4.0;
+              float y;
+              y = x + 5.2;
+              println(y); // Esto que verga!
+
+              float z = x * y + 15.0;
+
+              println("Me llamo" + name);
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Variables en Processing</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              int circleX = 100;
+              int circleY = 100;
+
+              void setup() {
+                size(200,200);
+              }
+
+              void draw() {
+                background(100);
+                stroke(255);
+                fill(0);
+                ellipse(circleX,circleY,50,50);
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Variables en Processing</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              int circleX = 100;
+              int circleY = 100;
+
+              void setup() {
+                size(200,200);
+              }
+
+              void draw() {
+                background(100);
+                stroke(255);
+                fill(0);
+                ellipse(circleX,circleY,50,50);
+
+                circleX = circleX + 1;
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Ejercicio</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              int circleSize = 0;
+              int circleX = 100;
+              int circleY = 100;
+
+              void setup() {
+                size(200,200);
+              }
+
+              void draw() {
+                background(0);
+                stroke(255);
+                fill(175);
+                // ________________?
+                // ________________?
+              }
+            </code></pre>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hjls.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
