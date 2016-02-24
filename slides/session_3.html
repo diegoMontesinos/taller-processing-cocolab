@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Taller Processing Cocolab - Sesión #3</title>
+
+    <meta name="description" content="Slides de la sesión #3 del taller de Processing.">
+    <meta name="author" content="Diego Montesinos">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Processing Workshop</h1>
+          <h3>Sesión #3</h3>
+          <p>
+            <small>Diego Montesinos / COCOLAB 2016</small>
+          </p>
+          <img width="170" height="170" data-src="https://media.giphy.com/media/Mr8wk96Bp7kkw/giphy.gif"/>
+        </section>
+
+        <!-- CONDICIONALES -->
+        <section>
+          <section>
+            <h1>Condicionales</h1>
+          </section>
+
+          <section>
+            <h2>Expresiones booleanas</h2>
+            <p>
+              Son expresiones que se "evaluan" o "se les asigna" dos valores:
+              Falso o Verdadero.
+            </p>
+          </section>
+
+          <section>
+            <h2>Expresiones booleanas</h2>
+            <ul>
+              <li>Esta lloviendo.</li>
+              <li>Esta clase me ha enseñado mucho.</li>
+              <li>Mi pantalón es verde.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Expresiones booleanas</h2>
+            <p>
+              En Processing:
+              <ul>
+                <li>15 es mayor que 20</li>
+                <li>5 es igual a 5</li>
+                <li>32 es menor o igual que 33</li>
+              </ul>
+            </p>
+          </section>
+
+          <section>
+            <h2>Expresiones booleanas</h2>
+            <img data-src="https://upload.wikimedia.org/wikipedia/commons/6/6c/George_Boole.jpg">
+          </section>
+
+          <section>
+            <h2>Operadores relacionales</h2>
+            <ul>
+              <li>>  : mayor que</li>
+              <li><  : menor que</li>
+              <li>>= : mayor o igual que</li>
+              <li><= : menor o igual que</li>
+              <li>== : igualdad</li>
+              <li>!= : desigualdad</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Condicionales</h2>
+            <p>
+              Sirven para tomar decisiones sobre lo que el código debe
+              o no hacer.
+              Es decir, se puede condicionar la ejecución de cierto código.
+            </p>
+          </section>
+
+          <section>
+            <h2>Condicionales</h2>
+            <blockquote>
+              Si el mouse está en la primera mitad de la pantalla entonces pinta las cosas
+              de negro.
+            </blockquote>
+            <blockquote>
+              Si la pelota ya se salio de la pantalla regresala.
+            </blockquote>
+          </section>
+
+          <section>
+            <h2>Condicional simple - Sintaxis</h2>
+            <img data-src="img/if-flow.png">
+          </section>
+
+          <section>
+            <h2>Condicional simple - Sintaxis</h2>
+            <img data-src="img/if-flow-example.png">
+          </section>
+
+          <section>
+            <h2>Condicional simple - Sintaxis</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              if (x < 150) {
+                line(x, 20, 180, 180);
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Condicional completa - Sintaxis</h2>
+            <img data-src="img/if-else-flow.png">
+          </section>
+
+          <section>
+            <h2>Condicional completa - Sintaxis</h2>
+            <img data-src="img/if-else-flow-example.png">
+          </section>
+
+          <section>
+            <h2>Condicional completa - Sintaxis</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              if (x < 150) {
+                line(x, 20, 180, 180);
+              } else {
+                ellipse(x, 20, 30, 30);
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Condicional multiple - Sintaxis</h2>
+            <img data-src="img/if-elseif-flow.png">
+          </section>
+
+          <section>
+            <h2>Condicional multiple - Sintaxis</h2>
+            <img data-src="img/if-elseif-flow-example.png">
+          </section>
+
+          <section>
+            <h2>Condicional multiple - Sintaxis</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              if (x < 150) {
+                line(x, 20, 180, 180);
+              } else if (x < 200) {
+                ellipse(x, 20, 30, 30);
+              } else {
+                rect(x, 20, 30, 30);
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Operadores lógicos</h2>
+            <ul>
+              <li>&& : AND</li>
+              <li>|| : OR</li>
+              <li>!  : NOT</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Operadores lógicos</h2>
+            <ul>
+              <li>(a > 5) && (b < 10)</li>
+              <li>!(mouseY == 5)</li>
+            </ul>
+          </section>
+        </section>
+
+        <!-- BUCLES -->
+        <section>
+          <section>
+            <h1>Bucles (Loops)</h1>
+          </section>
+
+          <section>
+            <h2>Iteraciones</h2>
+            <p>
+              Bucle, iteración, loop...<br>
+              Iterar es repetir.
+            </p>
+          </section>
+
+          <section>
+            <h2>Poner muchas líneas...</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              line(10, 0, 10, 30);
+              line(15, 0, 15, 30);
+              line(20, 0, 20, 30);
+              line(25, 0, 25, 30);
+              line(30, 0, 30, 30);
+              line(35, 0, 35, 30);
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>while</h2>
+            <img data-src="img/while.png">
+          </section>
+
+          <section>
+            <h2>while</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              int x = 0;
+
+              while(x < 100) {
+                line(x, 0, x, 30);
+                x += 5;
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>for</h2>
+            <img width="850" height="auto" data-src="img/for.png">
+          </section>
+
+          <section>
+            <h2>for</h2>
+            <p>
+              Sirve para contar...
+              <br>
+              Del 0 al 10, sumando 1 en 1.
+              <br>
+              Del 10 al 30, sumando 10 en 10.
+              <br>
+              Del 100 al 5, restando 3 en 3.
+            </p>
+          </section>
+
+          <section>
+            <h2>for</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">
+              for(int x = 0; x < 10; x++) {
+                line(x, 0, x, 30);
+              }
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>for - Ejercicios</h2>
+            <img data-src="img/for-ej1.png">
+            <img data-src="img/for-ej2.png">
+            <img data-src="img/for-ej3.png">
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hjls.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
